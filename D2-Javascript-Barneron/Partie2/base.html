@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title>Base Javascript p.2</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+
+
+        <!-- Horloge :
+        1) Créez un paragraphe dans votre fichier HTML
+        2) Récupérez l’heure et l’afficher au format “H:m:s” dans ce 
+        paragraphe
+        3) Mettre l’affichage des secondes, minutes et heures à jour 
+        en utilisant la méthode setInterval ou setTimer -->
+            
+      
+            <!-- <div id="Horloge">
+                <p>
+                    Ehrvhj erv erh vher jhv erhj vjher vj erjhv jehr vjher vj erjv erj vjher verv
+                    everhv ejhr vme vmhe rvljhervhj erhv erhvervhm
+                    ehv erhv ermbvmeribvieurbrviuerbvmiuebrvuberrviuerbv
+                    eovbieupveirubveruibveiurbvuiber.
+                    Hhevriveriurbvierubvber
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam ex doloribus atque saepe blanditiis sit nemo magni minus? Rem, laboriosam exercitationem perspiciatis sunt eum voluptates officiis doloribus nulla optio.
+                    Reprehenderit, libero Sequi?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti officia deleniti tempore tenetur a possimus reiciendis at accusamus qui minima quo tempora veritatis atque quis nihil sequi voluptatem, eveniet temporibus!
+                    Fuga consequatur iste qAb, eum?
+                    
+                </p>
+            </div>
+            <script>
+            // setInterval(() => {
+            //     var d = new Date();
+            //     var hours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+            //     var divHorloge =document.getElementById("Horloge");
+            //     console.log(divHorloge.innerHTML);
+            //     divHorloge.innerHTML =  hours;
+                
+            // }, 1000);
+            setTimeout(() => {
+                var d = new Date();
+                var hours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+                var divHorloge =document.getElementById("Horloge");
+                console.log(divHorloge.innerHTML);
+                divHorloge.innerHTML =  hours;   
+            }, 1000);
+               
+                
+            </script> -->
+
+
+        <!-- Navigation
+ 1) Créez une navbar avec une liste à puce (ul, li, a) contenant 
+ 5 liens
+ 2) Changer le style (background-color, color, etc.) du seul 
+ élément cliqué
+ 3) Si un autre lien à été cliqué avant, réinitialiser son style 
+ d’origine -->
+
+
+
+<div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#home" class="a active">Home</a>
+            </li>
+            <li>
+                <a href="#js" class="a ">Javascript</a>
+            </li>                    
+            <li>
+                <a href="#news" class="a ">News</a>
+            </li>
+            <li>
+                <a href="#contact" class="a ">Contact</a>
+            </li>
+            <li>
+                <a href="#about" class="a ">About</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+
+
+<div id="course">
+    <input type="text" id="inputText" placeholder="Liste de course">
+    <button id="sendInput">OK</button>
+    <button id="deleteInput">Suppr</button>
+
+    <ul id="list"></ul>
+
+</div>
+
+    </body>
+</html>
+<script src="Exercice2.js"></script>
+
+
+// <!-- // récupère un élément suivant son id
+//             var divIntro = document.getElementById("intro");
+//             console.log(divIntro);
+
+//             // récupère un tableau contenant tous les p
+//             var paragraphes = document.getElementsByTagName("p");
+//             console.log(paragraphes);
+
+//             // récupère un tableau contenant tous les éléments qui ont la classe red
+//             var redClassElements = document.getElementsByClassName("red");
+//             console.log(redClassElements);
+
+//             // récupère un élément suivant son sélecteur CSS
+//             // pas implémenté dans IE
+//             var lien = document.querySelector("p #lien");
+//             console.log(lien);
+
+//             // récupère un tableau suivant un sélecteur CSS
+//             // pas implémenté dans IE
+//             var liensInPWithClassRed = document.querySelectorAll("p a.red");
+//             console.log(liensInPWithClassRed);
+
+//             // récupère l'attribut href du lien
+//             var href = lien.getAttribute("href");
+//             console.log(href);
+//             // modifie l'attribut href du lien
+//             lien.setAttribute("href", "https://www.fnac.com"); -->

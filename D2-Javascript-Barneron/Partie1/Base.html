@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title>Base Javascript</title>
+        <script src=""></script>
+    </head>
+    <body>
+        <script>
+            var prenom = "Nicolas";
+            var age = "30";
+
+            console.log(typeof prenom);
+            console.log(typeof age);
+
+            console.log("Bonjour " + prenom);
+
+            var old = "test";
+            if (age == 30) {
+                var old = "local";
+                console.log("age == 30");
+            }
+            console.log(old);
+
+            if (age === 30) {
+                console.log("age === 30");
+            }
+
+            // parcours d'un objet avec for in
+            // lecture seul
+            const persons = {fname:"jhon", lname:"Doe"};
+            for (const property in persons) {
+                console.log(`${property}: ${persons[property]}`);
+            }
+
+            console.log(persons.fname);
+
+            const cars = ["Sabb", "Volvo", "BMW"];
+            // parcours d'un tableau avec for of
+            // lecture seul
+            for (const element of cars) {
+                console.log(element);
+            }
+
+            // parcours d'un tableau avec for i
+            // modification possible du contenu du tableau
+            for (let i = 0; i < cars.length; i++) {
+                console.log(cars[i]);     
+            }
+
+            // utilisation du forEach
+            const cities = ['ROME', 'PARIS', 'LONDON'];
+            cities.forEach( function(value, index, array) {
+                console.log(`${index + 1} ${value}`);
+                //console.log((index + 1) + " " + value);                
+            });
+
+            // utilisation du map
+            const numbers = [1, 2, 3, 4, 5];
+            const squaredNumbers = numbers.map(function(value) {
+                return value * value;
+            })
+            console.log(squaredNumbers); // affiche : 1, 4, 9, 16, 25
+
+            // utilisation de filter
+            const paires = numbers.filter(function(num) {
+                return num % 2 === 0;
+            });
+            console.log(paires); // affiche : 2, 4
+
+            // utilisation de reduce
+            const sum = numbers.reduce(function(somme, currentValue) {
+                return somme + currentValue;
+            }, 0);
+            console.log(sum) // affiche la somme : 15
+
+            // déclaration d'une fonction
+            function addition(a, b) {
+                return a + b;
+            }            
+            console.log(addition(10, 15)); // affiche : 25
+
+            // expression de fonction
+            const getRectArea = function(width, height) {
+                return width * height;
+            }
+            console.log(getRectArea(10, 20));
+
+            // fonctions fléchées
+            const a = ["un premier texte", "un deuxième texte", "un troisième texte"];
+            // sans fonction fléchées
+            a2 = a.map(function(s) {
+                return s.length;
+            })
+            // première version
+            a3 = a.map((s) => {
+                return s.length;
+            })
+            // deuxième version sans le return
+            a4 = a.map((s) => s.length)
+            // troisième version sans les ()
+            a5 = a.map(s => s.length);
+
+            // systaxe d'un objet
+            var personne = {
+                prenom: "Angel",
+                nom: "Di Maria",
+                age: "28",
+                couleurYeux: "marron",
+                getNomPrenom : function() {return this.nom + " "+ this.prenom}
+            }
+            console.log(personne.nom);
+            console.log(personne["nom"]);
+            console.log(personne.getNomPrenom());
+
+        </script>
+    </body>
+</html>
