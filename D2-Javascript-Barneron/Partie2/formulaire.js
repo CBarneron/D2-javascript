@@ -1,4 +1,4 @@
-console.log("Xxdark_joel_69xX");
+
 
 
 document.getElementById('form').addEventListener('submit',(e)=>{
@@ -8,44 +8,52 @@ document.getElementById('form').addEventListener('submit',(e)=>{
     let error =document.getElementById('erreur');
     let email = document.getElementById('mail');
     let regemail =new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
-    let regpwd =new RegExp('(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')
+    let regpwd =new RegExp('(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
+    let regtel =new RegExp('[0]{1}[0-9]{1}[0-9]{8}');
     let  pwd =document.getElementById('pwd');
     let num = document.getElementById('tel');
+
     error.innerHTML= "";
-    error.style="display:none";   
+    error.style="display:none";  
+    let msger =""; 
         if (prenom.value == ""){
           
-            error.style="display:block;";
-            error.innerHTML +="prenom requis";
+            
+            msger +="<br>prenom requis";
         
         }
        
         if (nom.value == ""){
-            error.style="display:block;";
-            error.innerHTML +="Nom requis";
+            
+            msger+="<br>Nom requis";
             
         }
        
         if(!regemail.test(email.value)){
-            error.style="display:block;";
-            error.innerHTML +="mail requis";
+            
+            msger+="<br>mail requis";
         }
         
-        console.log(num.value.length <=10);
-        if(num.value.length >10){
-            error.style="display:block;";
-            error.innerHTML +="Numerique de 10  requis";
+
+        if(!regtel.test(num.value)){
+            
+            msger +="<br>Numerique de 10  requis";
         }
         
         console.log(pwd.value);
         console.log(regpwd.test(pwd.value));
         if(!regpwd.test(pwd.value)){
+            
+            msger+="<br>9 character maj + min + spe requis";
+        }
+    
+        if (msger != "") {
+            error.innerHTML= msger;
             error.style="display:block;";
-            error.innerHTML +="9 character maj + min + spe requis";
         }
         
 
     })
-    console.log("Xxdark_joel_69xX");
+
     
 
