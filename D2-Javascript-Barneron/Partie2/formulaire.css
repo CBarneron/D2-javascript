@@ -1,0 +1,22 @@
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+.line {
+    margin-bottom: 5px;
+}
+
+.button {
+    padding-left: 150px;
+}
+
+#erreur {
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
+    border: solid 1px;
+    width: 300px;
+    min-height: 100px;
+    display: none; 
+}

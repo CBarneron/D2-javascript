@@ -57,7 +57,16 @@ document.querySelector('#sendInput').addEventListener('click', function() {
     input.value = "";
  }) 
 //del
+console.log("saliute");
+document.getElementById("deleteInput").addEventListener("click", (e) => {
+    // récupère la liste de tous les contenu dans ul
+    let ListeLi = list.querySelectorAll("li");
 
-document
+    // test si la taille de la liste est >= 1
+    if (ListeLi.length >= 1) {
+        // supprime le dernier élément de la liste
+        ListeLi[ListeLi.length - 1].remove();
+    }
+});
 
 
