@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>promise Js</h1>
+    <input type="button" id="testPromise" value="TEst Promise">
+
+    <input type="button" id="testGetToken"value="TestgetToken">
+
+    <input type="button" id="testGetuser" value="testGetuser">
+    <input type="button" id="TestgetTokenUser"value="asyntoken">
+
+</body>
+<script>
+document.getElementById('testPromise').addEventListener("click",()=>{
+        testPromise();
+})
+document.getElementById('testGetToken').addEventListener("click",()=>{
+    testGetToken();
+})
+document.getElementById('testGetuser').addEventListener("click",()=>{
+    testGetuser();
+})
+document.getElementById('TestgetTokenUser').addEventListener("click",()=>{
+    getTokenUser();
+})
+
+function testPromise() {
+    console.log("1");
+
+    const promise= new Promise((resolve,reject)=>{
+        console.log("2");
+        setTimeout(()=>{
+            if(Math.floor(Math.random()*2)===1)
+            resolve("3");
+            reject('reject3');
+    },Math.random() *2000+1000);}
+    )
+    promise.then(value=>console.log(value)).catch(value=>console.log(value));
+    console.log(4);
+
+    
+}
+function getToken() {
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(Math.random()>0.5){
+                resolve(token="qsdfEDLSoie5d8899;dEDd");
+            } else{
+                reject(er="Vous n'avez pas pu obtenir de token");
+            }
+        }),1000;
+    })
+}
+function testGetToken(){
+
+    getToken().then
+    (token=>console.log(token)).catch(er=>console.log(er));
+}
+function getUser(token){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if (Math.random()>0.5) {
+                resolve(`id:1,token:${token}`)
+            }else{
+                reject("Pas d'utilisateur")
+            }
+        }),2000
+    })
+}
+function testGetuser(){
+    getToken().then(token=>{
+        getUser(token).then(value=>console.log(value))
+        .catch(er=>{console.log(er);})
+
+    })
+    .catch(er=>{console.log(er);})
+}
+async function getTokenUser(token,user){
+    try {
+        const token =await getToken();
+        console.log(token);
+        const user = await getUser(token);
+        console.log(user);
+    } catch (er) {
+        console.log(er);
+    }
+
+}
+
+</script>
+</html>
