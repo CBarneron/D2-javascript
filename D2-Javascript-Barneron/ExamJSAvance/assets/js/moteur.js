@@ -98,7 +98,6 @@ var play = function() {
         
         isCaseAllowed(selectedHTMLClasses);
         if (isCaseAllowed(selectedHTMLClasses)==true) {
-            console.log("test");
             addSelectedClassByPlayer(this.classList);
             currentSelection = true;
         }
@@ -108,7 +107,16 @@ var play = function() {
             removeSelectedClassByPlayer(this.classList);
             currentSelection= false;
         }
-       
+
+        if (currentPlayer ==1) 
+        {
+            this.classList.remove('pion-noir','tour-noir','cavalier-noir','fou-noir','reine-noir','roi-noir');
+        }else{
+            this.classList.remove('pion-blanc','tour-blanc','cavalier-blanc','fou-blanc','reine-blanc','roi-blanc')
+        }
+        let classPiece = getCaseClass(selectedHTMLClasses);
+        selectedHTML.classList.remove(classPiece,"selectedRed","selectedBlue")
+        this.classList.add(classPiece)
         
         currentSelection =false;
         changePlayer();
@@ -232,7 +240,7 @@ document.getElementById('reset').addEventListener("click", ()=>{
 
 function reset(){
     getElementsChildren();
-    alert("Le plateau a été réinitialiser ")
+    
 }
 function isCaseEmpty(selectedHTMLClasses){
     
